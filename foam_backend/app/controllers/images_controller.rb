@@ -4,4 +4,5 @@ class ImagesController < ApplicationController
         images = Image.all 
         render json: ImageSerializer.new(images)
     end
+
 end
