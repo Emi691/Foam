@@ -2,7 +2,7 @@ import React from 'react';
 
 function tags(props) {
     return (
-        <div>
+        <div style={{backgroundColor:"yellow"}}>
             tags
         </div>
     );

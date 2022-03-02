@@ -2,7 +2,7 @@ import React from 'react';
 
 function images(props) {
     return (
-        <div>
+        <div style={{backgroundColor:"red"}}>
             image
         </div>
     );
