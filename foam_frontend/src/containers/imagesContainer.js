@@ -8,14 +8,13 @@ function ImagesContainer(props) {
     useEffect(() => {
         fetch("http://localhost:3000/images")
         .then(res => res.json())
-        .then(image => console.log(image.data))
-    })
+        .then(images => setState(images.data))
+    }, [])
 
     return (
         <div className='container'>
             container
-            <Image/>
-            <Tag/>
+            {state.map(image => <div><Image/><Tag/></div>)}
         </div>
     );
 }
