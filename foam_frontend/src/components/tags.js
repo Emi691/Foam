@@ -21,17 +21,17 @@ class Tags extends Component {
             body: JSON.stringify({
                 tag: {
                    name: event.target.value,
-                   image_id: this.prop.imageId
+                   image_id: this.props.imageId
                 }
             })
         })
-        .then(resp = resp.json())
+        .then(res => res.json())
         .then(tag => console.log(tag))
     }
 
     renderAddTags = () => {
         if(!!this.state.plus){
-            return this.state.tags.map(tag => <button onClick={event => this.handleAddTag()}>{tag}</button>)
+            return this.state.tags.map(tag => <button value={tag} onClick={event => this.handleAddTag(event)}>{tag}</button>)
         }
     }
 

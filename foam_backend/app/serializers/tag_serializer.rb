@@ -1,4 +1,4 @@
 class TagSerializer
   include JSONAPI::Serializer
-  attributes :foaming, :image_id
+  attributes :name, :image_id
 end
