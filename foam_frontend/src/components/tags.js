@@ -46,8 +46,8 @@ class Tags extends Component {
 
     renderAddTags = () => {
         if(!!this.state.plus){
-            return [ <button value="#foaming" onClick={event => this.handleAddTag(event)}>#foaming</button>, 
-                <button value="#notfoaming" onClick={event => this.handleAddTag(event)}>#notfoaming</button>]
+            return [ <button value="#foaming" style={{border:'none'}} onClick={event => this.handleAddTag(event)}>#foaming</button>, 
+                <button value="#notfoaming" style={{border:'none'}} onClick={event => this.handleAddTag(event)}>#notfoaming</button>]
         }
     }
 

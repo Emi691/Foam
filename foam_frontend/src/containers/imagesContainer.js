@@ -11,7 +11,7 @@ function ImagesContainer(props) {
         .then(images => setState(images.data))
     }, [])
 
-    const images = state
+    const images = !!props.filterVal ? state.filter(image => !!image.attributes.tags.length && image.attributes.tags[0].name === props.filterVal) : state
 
     return (
         <div className='container'>
