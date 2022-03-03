@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './imagesContainer.css'
 import Image from '../components/images'
-import Tag from '../components/tags'
 
 function ImagesContainer(props) {
     const [state, setState] = useState([])
@@ -14,7 +13,7 @@ function ImagesContainer(props) {
 
     return (
         <div className='container'>
-            {state.map(image => <div><Image key={image.id} url={image.attributes.url}/><Tag/></div>)}
+            {state.map(image => <Image key={image.id} url={image.attributes.url} id={image.id}/>)}
         </div>
     );
 }

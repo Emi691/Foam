@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function tags(props) {
-    return (
-        <div style={{backgroundColor:"yellow"}}>
-            tags
+class Tags extends Component {
+
+    render(){
+        return (
+        <div style={{backgroundColor:"yellow", textAlign:"left"}}>
+            tags: 
+            <button style={{border:"none", backgroundColor:"transparent"}} onClick={event => this.handleClick}>+</button>
         </div>
-    );
+        );
+    }
 }
 
-export default tags;
+export default Tags;
