@@ -3,14 +3,15 @@ import React, { Component } from 'react';
 class Tags extends Component {
     state = {
         plus: false,
-        tags: [],
+        tag: '',
     }
 
     componentDidMount = () => {
-        const names = this.props.tags.map(tag => tag.name)
-        this.setState({
-            tags: names
-        })
+        if(!!this.props.tag){
+            this.setState({
+            tag: this.props.tag.name
+            })
+        }
     }
 
     handleClick = () => {
@@ -38,7 +39,7 @@ class Tags extends Component {
             return {
                 ...prevState,
                 plus: false,
-                tags: [...prevState.tags, tag.data.attributes.name]
+                tags: tag.data.attributes.name
             }
         })
         )
@@ -54,7 +55,7 @@ class Tags extends Component {
     render(){
         return (
         <div style={{textAlign:"left"}}>
-            tags: {this.state.tags.join(', ')}
+            tags: {this.state.tag}
             <button style={{border:"none", backgroundColor:"transparent"}} onClick={event => this.handleClick()}>+</button>
             {this.renderAddTags()}
         </div>

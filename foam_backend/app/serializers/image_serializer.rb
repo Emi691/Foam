@@ -1,4 +1,4 @@
 class ImageSerializer
   include JSONAPI::Serializer
-  attributes :url, :tags
+  attributes :url, :tag
 end

@@ -13,9 +13,9 @@ function ImagesContainer(props) {
 
     const imageData = () => {
         if(props.filterVal === 'unclassified'){
-            return state.filter(image => !image.attributes.tags.length) 
+            return state.filter(image => !image.attributes.tag) 
         }else if(!!props.filterVal){
-            return state.filter(image => !!image.attributes.tags.length && image.attributes.tags[0].name === props.filterVal)
+            return state.filter(image => !!image.attributes.tag && image.attributes.tag.name === props.filterVal)
         }else{
             return state
         }
@@ -25,7 +25,7 @@ function ImagesContainer(props) {
 
     return (
         <div className='container'>
-            {images.map(image => <Image key={image.id} id={image.id} url={image.attributes.url} tags={image.attributes.tags}/>)}
+            {images.map(image => <Image key={image.id} id={image.id} url={image.attributes.url} tag={image.attributes.tag}/>)}
         </div>
     );
 }
