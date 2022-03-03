@@ -53,7 +53,7 @@ class Tags extends Component {
 
     render(){
         return (
-        <div style={{backgroundColor:"yellow", textAlign:"left"}}>
+        <div style={{textAlign:"left"}}>
             tags: {this.state.tags.join(', ')}
             <button style={{border:"none", backgroundColor:"transparent"}} onClick={event => this.handleClick()}>+</button>
             {this.renderAddTags()}

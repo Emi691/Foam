@@ -11,9 +11,11 @@ function ImagesContainer(props) {
         .then(images => setState(images.data))
     }, [])
 
+    const images = state
+
     return (
         <div className='container'>
-            {state.map(image => <Image key={image.id} id={image.id} url={image.attributes.url} tags={image.attributes.tags}/>)}
+            {images.map(image => <Image key={image.id} id={image.id} url={image.attributes.url} tags={image.attributes.tags}/>)}
         </div>
     );
 }
