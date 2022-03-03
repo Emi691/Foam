@@ -39,7 +39,7 @@ class Tags extends Component {
             return {
                 ...prevState,
                 plus: false,
-                tags: tag.data.attributes.name
+                tag: tag.data.attributes.name
             }
         })
         )
