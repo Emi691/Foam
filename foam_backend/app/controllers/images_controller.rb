@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
 
     def index
-        images = Image.first(30)
+        images = Image.all
         render json: ImageSerializer.new(images)
     end
 

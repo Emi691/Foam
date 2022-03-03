@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './imagesContainer.css'
 import Image from '../components/images'
+import { usePagination } from '@mui/material/Pagination';
 
 function ImagesContainer(props) {
     const [state, setState] = useState([])
@@ -25,6 +26,7 @@ function ImagesContainer(props) {
 
     return (
         <div className='container'>
+            <usePagination count={10} />
             {images.map(image => <Image key={image.id} id={image.id} url={image.attributes.url} tag={image.attributes.tag}/>)}
         </div>
     );

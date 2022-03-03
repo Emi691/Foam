@@ -12,8 +12,10 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Bioreactor Run</h1>
-      <Filters handleFilter={handleFilter}/>
+      <div className='header'>
+        <h1>Reactor Run</h1>
+        <Filters handleFilter={handleFilter}/>
+      </div>
       <Container filterVal={state}/>
     </div>
   );
