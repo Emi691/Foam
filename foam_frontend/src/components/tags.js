@@ -6,16 +6,31 @@ class Tags extends Component {
         tags: ['#foaming', '#notfoaming'],
     }
 
-    handleClick = (event) => {
-        console.log("clicked!")
+    handleClick = () => {
         this.setState({
             plus: true
         })
     }
 
+    handleAddTag = (event) => {
+        fetch('http://localhost:3000/tags', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                tag: {
+                   name: event.target.value,
+                   image_id: this.prop.imageId
+                }
+            })
+        })
+        .then(resp = resp.json())
+        .then(tag => console.log(tag))
+    }
+
     renderAddTags = () => {
         if(!!this.state.plus){
-            console.log("adds buttons")
             return this.state.tags.map(tag => <button onClick={event => this.handleAddTag()}>{tag}</button>)
         }
     }
