@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2022_03_01_014937) do
   end
 
   create_table "tags", force: :cascade do |t|
-    t.boolean "foaming"
+    t.string "name"
     t.integer "user_id"
     t.integer "image_id"
     t.datetime "created_at", precision: 6, null: false
