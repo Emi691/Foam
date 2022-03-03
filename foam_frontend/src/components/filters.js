@@ -5,7 +5,9 @@ function Filters(props) {
 
     const handleClick = () => {
        setState([<button value='#foaming' style={{border:'none', margin:'5px'}} onClick={event => props.handleFilter(event)}>#foaming</button> ,
-        <button value='#notfoaming' style={{border:'none', margin:'5px'}} onClick={event => props.handleFilter(event)} >#notfoaming</button>])
+        <button value='#notfoaming' style={{border:'none', margin:'5px'}} onClick={event => props.handleFilter(event)} >#notfoaming</button>,
+        <button value='unclassified' style={{border:'none', margin:'5px'}} onClick={event => props.handleFilter(event)} >unclassified</button>
+    ])
     }
 
     return (

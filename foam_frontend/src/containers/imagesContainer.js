@@ -11,7 +11,17 @@ function ImagesContainer(props) {
         .then(images => setState(images.data))
     }, [])
 
-    const images = !!props.filterVal ? state.filter(image => !!image.attributes.tags.length && image.attributes.tags[0].name === props.filterVal) : state
+    const imageData = () => {
+        if(props.filterVal === 'unclassified'){
+            return state.filter(image => !image.attributes.tags.length) 
+        }else if(!!props.filterVal){
+            return state.filter(image => !!image.attributes.tags.length && image.attributes.tags[0].name === props.filterVal)
+        }else{
+            return state
+        }
+    }
+
+    const images = imageData()
 
     return (
         <div className='container'>
