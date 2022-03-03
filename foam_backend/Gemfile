@@ -30,6 +30,9 @@ gem 'json'
 #Use to manage CORs permissions
 gem 'rack-cors'
 
+#runtime console for debugging
+gem 'pry', '~> 0.13.1'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

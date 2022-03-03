@@ -5,7 +5,7 @@ function images(props) {
     return (
         <div style={{backgroundColor:"red"}}>
             <img src={props.url} height='150' width="auto"/>
-            <Tag imageId={props.id}/>
+            <Tag imageId={props.id} tags={props.tags}/>
         </div>
     );
 }

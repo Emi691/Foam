@@ -3,7 +3,14 @@ import React, { Component } from 'react';
 class Tags extends Component {
     state = {
         plus: false,
-        tags: ['#foaming', '#notfoaming'],
+        tags: [],
+    }
+
+    componentDidMount = () => {
+        const names = this.props.tags.map(tag => tag.name)
+        this.setState({
+            tags: names
+        })
     }
 
     handleClick = () => {
@@ -26,19 +33,28 @@ class Tags extends Component {
             })
         })
         .then(res => res.json())
-        .then(tag => console.log(tag))
+        .then(tag =>
+        this.setState(prevState => {
+            return {
+                ...prevState,
+                plus: false,
+                tags: [...prevState.tags, tag.data.attributes.name]
+            }
+        })
+        )
     }
 
     renderAddTags = () => {
         if(!!this.state.plus){
-            return this.state.tags.map(tag => <button value={tag} onClick={event => this.handleAddTag(event)}>{tag}</button>)
+            return [ <button value="#foaming" onClick={event => this.handleAddTag(event)}>#foaming</button>, 
+                <button value="#notfoaming" onClick={event => this.handleAddTag(event)}>#notfoaming</button>]
         }
     }
 
     render(){
         return (
         <div style={{backgroundColor:"yellow", textAlign:"left"}}>
-            tags: 
+            tags: {this.state.tags.join(', ')}
             <button style={{border:"none", backgroundColor:"transparent"}} onClick={event => this.handleClick()}>+</button>
             {this.renderAddTags()}
         </div>

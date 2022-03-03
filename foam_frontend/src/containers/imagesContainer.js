@@ -13,7 +13,7 @@ function ImagesContainer(props) {
 
     return (
         <div className='container'>
-            {state.map(image => <Image key={image.id} url={image.attributes.url} id={image.id}/>)}
+            {state.map(image => <Image key={image.id} id={image.id} url={image.attributes.url} tags={image.attributes.tags}/>)}
         </div>
     );
 }
